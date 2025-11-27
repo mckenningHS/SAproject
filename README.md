@@ -7,8 +7,8 @@
 ### How to run your application locally
 
 ```bash
-git clone https://github.com/YOUR_USER/hs-solution-architect-tech-assignment.git
-cd hs-solution-architect-tech-assignment
+git clone https://github.com/mckenningHS/SAproject.git
+cd SAproject
 npm install
 
 # Start the app
