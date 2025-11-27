@@ -262,15 +262,15 @@ erDiagram
 
 2. Deal Pipeline Architecture
 
-Hardware Sales Pipeline
-Stages:
-Website Visit → Added To Cart → Purchase Completed → Order Shipped → Order Delivered
-Tracks one-time hardware purchases (e.g., $299).
+- Hardware Sales Pipeline
 
-Subscription Sales Pipeline
-Stages:
-Free Trial Started → Engaged With Features → Trial Ending Soon → Subscription Purchased → Subscription Cancelled
-Tracks recurring subscription revenue (e.g., $9.99/month).
+  - Stages: Website Visit → Added To Cart → Purchase Completed → Order Shipped → Order Delivered
+  - Tracks one-time hardware purchases (e.g., $299).
+
+- Subscription Sales Pipeline
+
+  - Stages:Free Trial Started → Engaged With Features → Trial Ending Soon → Subscription Purchased → Subscription Cancelled
+  - Tracks recurring subscription revenue (e.g., $9.99/month).
 
 These are set in HubSpot and referenced in server.js.
 
