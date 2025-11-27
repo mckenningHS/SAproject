@@ -61,9 +61,9 @@ Custom Object: Create an object called 'Hardware' (Plural: 'Hardware'). It must 
 
 Deal Pipelines:
 
-Create a 'Hardware Sales' pipeline with stages: 'Purchase Completed', 'Shipped', 'Delivered'.
+Create a 'Hardware Sales' pipeline with stages: 'Website Visit', 'Added To Cart', 'Purchase Completed', 'Order Shipped', 'Order Delivered'.
 
-Create a 'Subscription Sales' pipeline with stages: 'Trial Started', 'Active', 'Churned'.
+Create a 'Subscription Sales' pipeline with stages: 'Free Trial Started', 'Engaged With Features', 'Trial Ending Soon', 'Subscription Purchased', 'Subscription Cancelled'.
 
 Contact Properties: Create a custom property group 'Breezy Intelligence' and add a property 'upsell_opportunity' (Single-line text).
 ```
@@ -107,15 +107,19 @@ Update the association ID to match your Custom Object → Contact associationID.
 
 **Hardware Sales Pipeline**  
 Stages:
-- Purchase Completed  
-- Shipped  
-- Delivered  
+- Website Visit
+- Added To Cart
+- Purchase Completed
+- Order Shipped
+- Order Delivered
 
 **Subscription Sales Pipeline**  
 Stages:
-- Trial Started  
-- Active  
-- Churned  
+- Free Trial Started
+- Engaged With Features
+- Trial Ending Soon
+- Subscription Purchased
+- Subscription Cancelled
 
 Update the Pipeline IDs and Stage IDs in server.js.
 
