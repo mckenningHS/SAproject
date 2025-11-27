@@ -237,19 +237,22 @@ The **Intelligent Upsell Detector**:
 - Triggered manually via “✨ Scan for Upsell”  
 
 ### Why did you choose this feature?
-- Connects device telemetry with CRM  
-- Shows real revenue opportunities  
-- Fits Breezy’s hardware + subscription model  
+
+- It connects Breezy’s device data with HubSpot’s CRM data, showing how the integration can drive sales and marketing actions.
+- It ties Breezy’s business model (hardware + subscription) directly into revenue-focused insights inside HubSpot.
 
 ### How does it make the integration smarter?
-- Identifies strong upsell candidates  
-- Helps Sales focus efforts  
-- Helps Marketing build precise Active Lists  
+
+- It highlights which customers are likely good upsell candidates, not just who owns a device.
+- Sales can focus on High Opportunity contacts instead of a generic list.
+- Marketing can build Active Lists based on the upsell_opportunity property and target “High” contacts with stronger offers.
 
 ### When use AI vs rules?
-Use AI for multi-input predictions.  
-Use rules for simple thresholds.
 
+- Use AI when evaluating many inputs (telemetry, house size, device model, season, etc.) to make a flexible prediction of upsell potential, not just a simple threshold.
+- Use traditional logic when a basic rule is enough (for example, energy spend > X for 3 months in a row).
+
+In this POC, the AI-based feature replaces what would otherwise be a very complex set of nested if/then rules.
 ---
 
 ## F. Design Decisions  
@@ -257,18 +260,22 @@ Use rules for simple thresholds.
 ### Technical choices you made and why
 
 **Hardware as a Custom Object**  
-- Allows multi-device ownership  
-- Enables identifying customers with multiple thermostats
+
+- Choice: Use a Hardware custom object instead of storing serial number and model on the Contact.
+- Reason: A single customer can own multiple devices (e.g., primary home + vacation home). A custom object supports a clear one-to-many relationship and allows easy reporting on customers with multiple thermostats but no premium subscription.
 
 **Dual Deal Pipelines**  
-- Separates revenue types  
-- Improves visibility into trials and churn  
-- Supports win-back campaigns
+
+- Choice: Use separate pipelines: Hardware Sales and Subscription Sales.
+- Reason:
+  - Clean revenue reporting (one-time vs recurring).
+  - Better visibility into free trial and churn.
+  - Helps identify customers who still own hardware but have a churned subscription for win-back campaigns.
 
 **Manual AI Trigger**  
-- Keeps POC simple  
-- Avoids Gemini rate limits  
 
+- Choice: Trigger the AI scan via a manual button (✨ Scan for Upsell) instead of a background job.
+- Reason: Stay within Gemini’s free-tier rate limits and keep the POC simple while still showing the full flow.
 ---
 
 ### Assumptions  
