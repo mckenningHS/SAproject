@@ -215,11 +215,11 @@ erDiagram
 
 **Hardware Sales Pipeline**  
 Stages: Purchase Completed → Shipped → Delivered  
-Tracks one-time hardware purchases.
+Tracks one-time hardware purchases (e.g., $299).
 
 **Subscription Sales Pipeline**  
 Stages: Trial Started → Active → Churned  
-Tracks recurring subscription revenue.
+Tracks recurring subscription revenue (e.g., $9.99/month).
 
 These are set in HubSpot and referenced in server.js.
 
@@ -230,11 +230,11 @@ These are set in HubSpot and referenced in server.js.
 ### Describe your AI-powered feature  
 The **Intelligent Upsell Detector**:
 
-- Mocks monthly energy spend  
-- Uses Google Gemini to compare spend vs subscription cost  
-- Sets upsell_opportunity to “High” when usage indicates a strong benefit from the premium plan.
-- For the demo, the logic is randomized  
-- Triggered manually via “✨ Scan for Upsell”  
+- It mocks monthly energy spend for a thermostat.
+- It uses Google Gemini to compare this spend to the cost of the premium subscription.
+- If the ROI is positive, it updates the HubSpot Contact property upsell_opportunity to “High”.
+- For this POC, the logic on the server is a mock: it randomly marks contacts as “High” or “Low” for demo purposes.
+-  The AI scan is triggered by a manual “✨ Scan for Upsell” button to stay within Gemini free-tier rate limits. In a production setup, this scan would be automated.”  
 
 ### Why did you choose this feature?
 
@@ -279,21 +279,24 @@ In this POC, the AI-based feature replaces what would otherwise be a very comple
 ---
 
 ### Assumptions  
-- Breezy provides telemetry data  
-- Customers may own multiple thermostats  
+
+- Breezy can send or derive thermostat usage / energy spend data that can be used as telemetry.
+- A single Breezy customer can own multiple thermostats across different locations.
 
 ---
 
 ### What you'd improve with more time  
-- Use Search API for contact lists  
-- Replace random AI logic  
-- Automate AI scan  
-- Improve UI detail and visibility  
+
+- Use the Search API to display synced contacts in order of creation date, with pagination.
+- Replace the mock random AI logic with a real Gemini-based calculation that uses more telemetry fields.
+- Move from a manual AI scan to an automated scan.
+- Improve the UI with clearer and more detailed views of deals and hardware assets.
 
 ---
 
 ### What you'd ask before production  
-- Define “High Opportunity” contact  
-- Understand target segments  
-- Confirm privacy/compliance constraints  
-- Identify other required integrations  
+
+- What exact business rules should define a “High Opportunity” contact (for AI training and validation)?
+- How do Sales and Marketing teams want to segment customers (examples of target lists and campaigns)?
+- Are there any rate limit, privacy, or compliance constraints around using telemetry data for marketing and sales?
+- Are there other important systems they are currently using that need to connect with HubSpot? 
