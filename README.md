@@ -52,6 +52,51 @@ GEMINI_API_KEY=AIza-your-google-key
 ### HubSpot Portal Configuration  
 Before running the app, set up your HubSpot portal to match the backend logic.
 
+To Create assets listed below, you can use the following prompt on HubSpot's AI assistant:
+
+```env
+Create the following assets: 
+
+Custom Object: Create an object called 'Hardware' (Plural: 'Hardware'). It must have a primary display property called 'model' (Single-line text) and a property for 'serial_number'. It needs a Many-to-One association with Contacts.
+
+Deal Pipelines:
+
+Create a 'Hardware Sales' pipeline with stages: 'Purchase Completed', 'Shipped', 'Delivered'.
+
+Create a 'Subscription Sales' pipeline with stages: 'Trial Started', 'Active', 'Churned'.
+
+Contact Properties: Create a custom property group 'Breezy Intelligence' and add a property 'upsell_opportunity' (Single-line text).
+```
+
+
+To get internal values, *start a new chat* with AI assistant and request:
+
+```env 
+provide me the internal values for each of the stages of the subscription sales pipeline and hardware sales pipeline, along with label.
+
+Also, provide me with the internal ID of Hardware object, and association ID for Contact->Hardware association
+```
+
+Then, Use Gemini to update server.js:
+
+```env 
+"I have a Node.js file (server.js) that connects to the HubSpot API. I need to update the configuration constants with new Internal IDs from my portal.
+
+Here is my current server.js code: [PASTE YOUR SERVER.JS CONTENT HERE]
+
+Please refactor the PIPELINES and CUSTOM_OBJECTS constants at the top of the file with these specific new values:
+
+Hardware Object ID: [PASTE NEW ID]
+
+Hardware Pipeline ID: [PASTE NEW ID] (Stage 'Purchase Completed': [PASTE ID])
+
+Subscription Pipeline ID: [PASTE NEW ID] (Stages 'Trial': [PASTE ID], 'Active': [PASTE ID])
+
+Association ID (Contact->Hardware): [PASTE ID]
+
+Return only the updated const PIPELINES = ... and const CUSTOM_OBJECTS = ... code blocks so I can copy-paste them back."
+```
+
 #### Create Custom Object: Hardware  
 Name: Hardware  
 Required Property: model (single-line text)  
