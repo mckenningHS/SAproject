@@ -1,0 +1,333 @@
+:root {
+  --hubspot-green: #00a4bd;
+  --breezy-red: #e74c3c;
+  --bg-light: #f7f9fa;
+  --border-color: #e6e9ed;
+  --text-dark: #333;
+  --text-light: #777;
+  --success-bg: #e7faf2;
+  --success-text: #17935d;
+}
+
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.container {
+  padding: 20px 40px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--breezy-red);
+}
+
+.nav-bar {
+  font-size: 0.9em;
+}
+
+.nav-item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  border-bottom: 2px solid var(--hubspot-green);
+  font-weight: bold;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: var(--text-light);
+}
+
+.status-dot {
+  height: 8px;
+  width: 8px;
+  background-color: var(--hubspot-green);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.user-initials {
+  background-color: var(--hubspot-green);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+/* Layout */
+.sync-center-info {
+  margin-bottom: 20px;
+}
+
+.panel-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.sync-form-panel {
+  flex: 1;
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.contacts-panel {
+  flex: 2;
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Styles */
+.description {
+  color: var(--text-light);
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.form-section {
+  margin-bottom: 15px;
+}
+
+.form-section label {
+  display: block;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.simulate-button {
+  background-color: var(--breezy-red);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.simulate-button:hover {
+  background-color: #c0392b;
+}
+
+/* Dev Mode Box */
+.dev-mode-box {
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #f0f4f7;
+  border: 1px solid #d7dfe6;
+  font-size: 0.8em;
+  color: var(--text-light);
+}
+
+.dev-mode-box .dot {
+  color: #f39c12; /* Amber/Orange dot */
+  margin-right: 5px;
+}
+
+/* Contacts Panel Header */
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contacts-header h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#recordCount {
+  font-size: 0.7em;
+  color: var(--text-light);
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.refresh-button {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+}
+
+/* Contacts Table */
+.contacts-table {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.table-header,
+.contact-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-header {
+  background-color: var(--bg-light);
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.contact-row {
+  background-color: white;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contact-col {
+  display: flex;
+  align-items: center;
+}
+
+.initials-badge {
+  background-color: var(--hubspot-green);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-weight: bold;
+}
+
+.contact-title {
+  font-size: 0.8em;
+  color: var(--text-light);
+}
+
+.email-col {
+  word-break: break-all;
+}
+
+.subscription-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.subscription-tag.paid {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.subscription-tag.trial {
+  background-color: #feeed4;
+  color: #b46b0e;
+}
+
+.sync-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: none;
+}
+
+.sync-message.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+/* Deals Panel Styling */
+.deals-container {
+  grid-column: 1 / -1;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  display: none; /* Hidden by default */
+}
+
+.deal-card {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
