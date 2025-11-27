@@ -232,7 +232,7 @@ The **Intelligent Upsell Detector**:
 
 - Mocks monthly energy spend  
 - Uses Google Gemini to compare spend vs subscription cost  
-- Updates upsell_opportunity to “High” when ROI is positive  
+- Sets upsell_opportunity to “High” when usage indicates a strong benefit from the premium plan.
 - For the demo, the logic is randomized  
 - Triggered manually via “✨ Scan for Upsell”  
 
