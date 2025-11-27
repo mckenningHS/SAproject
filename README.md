@@ -253,6 +253,7 @@ The **Intelligent Upsell Detector**:
 - Use traditional logic when a basic rule is enough (for example, energy spend > X for 3 months in a row).
 
 In this POC, the AI-based feature replaces what would otherwise be a very complex set of nested if/then rules.
+
 ---
 
 ## F. Design Decisions  
