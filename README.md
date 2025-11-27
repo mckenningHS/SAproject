@@ -218,56 +218,58 @@ This design supports Breezy’s hybrid business model by separating:
 
 ---
 
-### 1. Entity Relationship Diagram (ERD)
+1. Entity Relationship Diagram (ERD)
 
 ```mermaid
 erDiagram
-    CONTACT ||--o{ HARDWARE_DEAL : "purchases"
-    CONTACT ||--o{ SUBSCRIPTION_DEAL : "subscribes"
-    CONTACT ||--o{ HARDWARE : "owns"
+    CONTACT ||--o{ HARDWARE_DEAL : purchases
+    CONTACT ||--o{ SUBSCRIPTION_DEAL : subscribes
+    CONTACT ||--o{ HARDWARE : owns
 
-    HARDWARE_DEAL ||--|| HARDWARE : "creates"
+    HARDWARE_DEAL ||--|| HARDWARE : creates
 
     CONTACT {
         string firstname
         string email
         string lifecycle_stage
-        string upsell_opportunity "High/Low"
-    }
-
-    HARDWARE_DEAL {
-        string pipeline "Hardware Sales"
-        string stage "Ordered/Shipped/Delivered"
-        float amount "299.00"
-        date close_date
+        string upsell_opportunity
     }
 
     SUBSCRIPTION_DEAL {
-        string pipeline "Subscription Sales"
-        string stage "Trial/Active/Churned"
-        float amount "9.99"
-        string type "New Business/Renewal"
+        string pipeline
+        string stage
+        float amount
+        string type
+    }
+
+    HARDWARE_DEAL {
+        string pipeline
+        string stage
+        float amount
+        date close_date
     }
 
     HARDWARE {
-        string object_type "Custom Object"
-        string serial_number "PK"
-        string model "Breezy T-1000"
-        string status "Online/Offline"
+        string object_type
+        string serial_number
+        string model
+        string status
         string firmware_version
     }
+
+    
 ```
 
----
+2. Deal Pipeline Architecture
 
-### 2. Deal Pipeline Architecture
-
-**Hardware Sales Pipeline**  
-Stages: Purchase Completed → Shipped → Delivered  
+Hardware Sales Pipeline
+Stages:
+Website Visit → Added To Cart → Purchase Completed → Order Shipped → Order Delivered
 Tracks one-time hardware purchases (e.g., $299).
 
-**Subscription Sales Pipeline**  
-Stages: Trial Started → Active → Churned  
+Subscription Sales Pipeline
+Stages:
+Free Trial Started → Engaged With Features → Trial Ending Soon → Subscription Purchased → Subscription Cancelled
 Tracks recurring subscription revenue (e.g., $9.99/month).
 
 These are set in HubSpot and referenced in server.js.
