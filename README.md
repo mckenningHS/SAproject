@@ -201,7 +201,7 @@ This Proof of Concept (POC) shows a synchronization engine between Breezy’s pl
 - Getting some parts of the code to work (a lot of trial and error).  
 - Being stuck when using Associations API v3, then switching to v4 based on Gemini’s suggestion.  
 - Testing several Gemini models until gemini-2.0-flash-exp “worked”.  
-- Adjusting expectations around automatic insight updates.
+- Needed to adapt my initial plan for automatic insight generation into a manual-trigger process to avoid exceeding AI rate limits.
 
 ### How did AI help (or not help)?
 - AI helped write frontend code, data model code, and backend code.  
