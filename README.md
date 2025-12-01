@@ -190,23 +190,24 @@ This Proof of Concept (POC) shows a synchronization engine between Breezy’s pl
 ### What did you learn? What was challenging?
 
 **Learned:**  
-- How to use AI endpoints.  
+- How to use AI endpoints. 
 - How to work with AI to customize and refine prototypes.  
 - How to apply Breeze data model recommendations in a demo.
 - How to create a project on Github
+- Learned how to create and use ERD diagrams for representing object relationships.
 
 **Challenging:**  
 - Getting some parts of the code to work (a lot of trial and error).  
-- Being blocked by the Associations API v3, then switching to v4 based on Gemini’s suggestion.  
+- Being stuck when using Associations API v3, then switching to v4 based on Gemini’s suggestion.  
 - Testing several Gemini models until gemini-2.0-flash-exp “worked”.  
 - Adjusting expectations around automatic insight updates.
 
 ### How did AI help (or not help)?
-- AI helped write UI code, data model code, and backend endpoints.  
-- AI helped resolve API version issues.  
+- AI helped write frontend code, data model code, and backend code.  
+- AI helped resolve Gemini API version issues.  
+- AI supported my decision-making by evaluating my architecture plan for this business context and offering constructive feedback.
 - AI did not automatically request internal IDs needed to complete the POC.  
-- AI generated parts of the README, but manual corrections were required.
-
+- AI generated portions of the README, although several manual corrections were required.
 ---
 
 ## D. HubSpot Data Architecture  
@@ -289,8 +290,8 @@ The **Intelligent Upsell Detector**:
 
 ### Why did you choose this feature?
 
-- It connects Breezy’s device data with HubSpot’s CRM data, showing how the integration can drive sales and marketing actions.
-- It ties Breezy’s business model (hardware + subscription) directly into revenue-focused insights inside HubSpot.
+This feature connects Breezy’s device and commerce data with HubSpot’s CRM by turning estimated energy usage into actionable upsell signals. It ties Breezy’s hardware + subscription model directly into revenue-focused insights that sales and marketing teams can use.
+A key benefit is that Breezy doesn’t need to send all of its e-commerce or device-level data into HubSpot. The evaluation happens inside Breezy’s own platform, and only the meaningful outcome (e.g., upsell_opportunity = High) is pushed to the CRM. This keeps HubSpot clean, protects sensitive business data, and surfaces only the insights that matter.
 
 ### How does it make the integration smarter?
 
