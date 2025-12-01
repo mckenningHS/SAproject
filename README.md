@@ -168,9 +168,10 @@ This Proof of Concept (POC) shows a synchronization engine between Breezy’s pl
 
 ### Which AI tools did you use?
 - Replit  
-- Gemini  
+- Gemini 3 Pro
 - Breeze Data Model  
-- HubSpot AI Assistant  
+- HubSpot AI Assistant
+- GPT-5.1 Pro
 
 ### What tasks did you use AI for?
 - Used Replit to generate a first draft of the UI.  
