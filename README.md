@@ -342,9 +342,10 @@ In this POC, the AI-based feature replaces what would otherwise be a very comple
 ### What you'd improve with more time  
 
 - Use the Search API to display synced contacts in order of creation date, with pagination.
-- Replace the mock random AI logic with a real Gemini-based calculation that uses more telemetry fields.
+- Enhance the AI feature to leverage more data (not just usage estimates) to generate richer insights.
 - Move from a manual AI scan to an automated scan.
-- Improve the UI with clearer and more detailed views of deals and hardware assets.
+- Refine UI design, add more robust AI insights and detailed views of deals and hardware assets per contact.
+  
 
 ---
 
