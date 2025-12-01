@@ -133,7 +133,7 @@ Used by the AI feature to flag high-value leads.
 After setup and starting the app:
 
 #### Test contact sync  
-Use the UI to create a new customer in HubSpot.  
+Use the UI to create a new contact in HubSpot.  
 View existing synced contacts in the UI.
 
 #### Test hardware + subscription deals  
